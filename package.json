@@ -8,7 +8,7 @@
   },
   "script" : {
     "start" : "node ./bin/www" 
-  }
+  },
   "main": "server.js",
   "author": {
     "name": "songsakdi rongviriyapanish"
