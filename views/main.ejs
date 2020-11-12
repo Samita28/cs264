@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+  <style>
+ body {
+  background-image: url('https://cdn.discordapp.com/attachments/691469832729657414/776097956906532894/bg1-2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.button{
+  background-color: 	#042f5a;
+}
+.button-wrapper{
+  width:220px;
+  height:55px;
+  font-size:16px;
+  display:block;
+  text-align:center;
+  border:none;
+  border-radius:2px;
+  cursor:pointer;
+  color: white;
+}
+.pos{
+  margin-top: 40px;
+  }
+.button1{
+padding: 15px 45px; 
+
+
+}
+.Sarabun {
+  font-family:  Sarabun;
+}
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.gab{
+ margin-top: 12px;
+}
+aside {
+  float: left;
+   margin-top: 170px;
+  border: 2px solid black;
+  background-color: #b78061;
+  position: absolute;
+  width:250px;
+  height: 550px;
+  text-align: center;
+  }
+</style>
+
+
+
+<body>
+
+<aside>
+<button class="button button-wrapper pos" class="Sarabun" style="color:white">หน้าแรก</button>
+<form action = "/fill-up/">
+<button class="button button1 button-wrapper gab" class="Sarabun" style="color:white ">กรอกคำร้องจดทะเบียนล่าช้า</button>
+</form>
+<button class="button button1 button-wrapper disabled gab" class="Sarabun" style="color:white ">ตรวจสอบสถานะคำร้อง</button>
+<button class="button button1 button-wrapper disabled gab" class="Sarabun" style="color:white ">แสดงผลยื่นคำร้อง</button>
+<button class="button button1 button-wrapper disabled gab" class="Sarabun " style="color:white ">ชำระค่าลงทะเบียน</button>
+<form action = "/logout/">
+<button class="button button1 button-wrapper gab" class="Sarabun" style="color:white ">ออกจากระบบ</button>
+</form>
+</aside>
+  
+</body>
+</html>

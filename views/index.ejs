@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-image: url('https://media.discordapp.net/attachments/772472192151453707/776006589500882944/login_no_logo.png?width=1028&height=495');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+
+}
+.my-btn-info {
+        color: #fff;
+        background-color: #042F5A !important;
+        border-color: #042F5A!important;
+        margin-left: 210px;
+      }
+.login{
+ text-align: center;
+  margin-top: 50px;
+  border: 2px solid black;
+  margin-left: 600px;
+  margin-right: 600px;
+  margin-bottom: 200px;
+  padding: 30px;
+} 
+.tuimage{
+   margin-top: 100px;
+  text-align: center;
+
+}
+
+</style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body>
+
+<style>
+
+</style>
+
+<div class = "tuimage">
+<img src="https://cdn.discordapp.com/attachments/772472192151453707/774994499683745802/TU_logo.png" alt="TU" style="width:200px;height:200px;">
+</div>
+  <div id="login">
+      <!-- <h3 class="text-center  pt-5"></h3> -->
+      <div class="container">
+        <div
+          id="login-row"
+          class="row justify-content-center align-items-center"
+        >
+          <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+              <form id="login-form" class="form" action="/main" method="post" novalidate>
+                <h3 class="text-center my-text-info">Login</h3>
+                <div class="form-group">
+                  <label for="user" class="my-text-info"
+                    >เลขทะเบียนนักศึกษา:</label
+                  ><br />
+                  <input
+                    type="text"
+                    name="user"
+                    id="user"
+                    class="form-control"
+                    placeholder="6XXXXXXXXX"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="pwd" class="my-text-info">รหัสผ่าน:</label><br />
+                  <input
+                    type="password"
+                    name="pwd"
+                    id="pwd"
+                    class="form-control"
+                    placeholder="***********"
+                  />
+                </div>
+                <div class="form-group">
+                  <p id="showerror" class="error" style="display: none;">Invalid Username or Password</p>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="submit"
+                    name="submit"
+                    class="btn btn-info btn-md my-btn-info"
+                    value="เข้าสู่ระบบ"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      async function postData(url = "", data = {}) {
+        const response = await fetch(url, {
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors", // no-cors, *cors, same-origin
+          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: "same-origin", // include, *same-origin, omit
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          redirect: "follow", // manual, *follow, error
+          referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: data, // body data type must match "Content-Type" header
+        });
+        return response.json(); // parses JSON response into native JavaScript objects
+      }
+     
+      const form = document.getElementById( "login-form" );
+      form.addEventListener("submit", function(e){
+        e.preventDefault();
+        var formBody = [];
+        var un = $('#user').val();
+        var pw = $('#pwd').val();
+        
+        formBody.push(encodeURIComponent("user") + '=' + encodeURIComponent(un));
+        formBody.push(encodeURIComponent("pwd") + '=' + encodeURIComponent(pw));
+        formBody = formBody.join("&").replace( /%20/g, '+' );
+        console.log(formBody);
+        postData('http://localhost:5000/api', formBody)
+        .then( data => {
+          console.log(data);
+          if (data.status) {
+            window.location = '/main/' + un;
+            return true;
+          } else {
+            document.getElementById("showerror").style.display = "block";
+            return false;
+          }
+        })
+        .catch((error) =>{
+          console.log(error);
+          return false;
+        });
+
+        return false;
+      });
+    </script>
+</body>
+</html>
+

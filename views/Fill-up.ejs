@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+.posheader{
+  width: auto;
+  height: auto;
+}
+body {
+  background-color: #f1e3d7;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.posOfData{
+  margin-top: -50px;
+  margin-left: 300px;
+}
+textarea {
+  width: 45%;
+  height: 120px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  margin-left: 300px;
+}
+
+.button{
+  background-color: 	#042f5a;
+}
+.button-wrapper{
+  width:220px;
+  height:55px;
+  font-size:16px;
+  display:block;
+  text-align:center;
+  border:none;
+  border-radius:2px;
+  cursor:pointer;
+  color: white;
+}
+.cen{
+  position: absolute;
+  top: 230px;
+  left: 449px;
+  transform: translate(-50%, -50%);
+}
+.cen1{
+  position: absolute;
+  top: 305px;
+  left: 540px;
+  transform: translate(-50%, -50%);
+}
+.pos{
+  margin-top: 40px;
+  }
+.button1{
+padding: 15px 45px; 
+}
+.Sarabun {
+  font-family:  Sarabun;
+}
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.gab{
+ margin-top: 12px;
+}
+.my-btn-info {
+        color: #fff;
+        background-color: #042F5A !important;
+        border-color: #042F5A!important;
+        margin-right: 302.5px;
+
+      }
+section{
+  float: right;
+  margin-right: 550px;
+  margin-top: 50px;
+}
+aside {
+  float: left;
+  margin-top: 20px;
+  border: 2px solid black;
+  background-color: #b78061;
+  position: absolute;
+  width:250px;
+  height: 550px;
+  text-align: center;
+  }
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+.posofsubmit{
+  margin-left: 100px;
+}
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-left: -50px;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <img src = "https://media.discordapp.net/attachments/691469832729657414/776143077638668318/head.png?width=1028&height=92" class = "posheader">
+  <section>
+    <div class="posOfData">
+        <label for="ภาคเรียน">ภาคเรียนที่</label>
+        <select id="ภาคเรียน" name="ภาคเรียน">
+          <option value="1">1/2563</option>
+          <option value="2">2/2563</option>
+          <option value="3">3/2563</option>
+          <option value="4">4/2563</option>
+        </select><br>
+        <label for="รหัสวิชา">รหัสวิชา</label>
+        <input type="text" id="รหัสวิชา" name="รหัสวิชา" placeholder="รหัสวิชา" class="posOfData1"><br>
+        <label for="ชื่อวิชา">ชื่อวิชา</label>
+        <input type="text" id="ชื่อวิชา" name="ชื่อวิชา" placeholder="ชื่อวิชา" class="posOfData2">
+    
+        <label for="sec">Sec</label>
+        <select id="sec" name="sec">
+          <option value="650001">Section</option>
+          <option value="650001">650001</option>
+          <option value="650002">650002</option>
+          <option value="650003">650003</option>
+        </select>
+      </form>
+    </div>
+    <div>
+      <form>
+        <br><br><textarea placeholder="เหตุผลที่ยื่นคำร้อง"></textarea>
+      </form>
+    </div>
+    <div class="form-group">
+      <input
+        type="submit"
+        name="submit"
+        class="btn btn-info btn-md my-btn-info"
+        value="submit"
+      />
+    </div>
+  </section>
+<aside>
+  <form action="/main/">
+  <button class="button button-wrapper pos" class="Sarabun" style="color:white">หน้าแรก</button>
+  </form>
+  <form action = "/fill-up/">
+  <button class="button button1 button-wrapper gab" class="Sarabun" style="color:white ">กรอกคำร้องจดทะเบียนล่าช้า</button>
+  </form>
+  <button class="button button1 button-wrapper disabled gab" class="Sarabun" style="color:white ">ตรวจสอบสถานะคำร้อง</button>
+  <button class="button button1 button-wrapper disabled gab" class="Sarabun" style="color:white ">แสดงผลยื่นคำร้อง</button>
+  <button class="button button1 button-wrapper disabled gab" class="Sarabun " style="color:white ">ชำระค่าลงทะเบียน</button>
+  <form action = "/logout/">
+  <button class="button button1 button-wrapper gab" class="Sarabun" style="color:white ">ออกจากระบบ</button>
+  </form>
+  </aside>
+</body>
+</html>
