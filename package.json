@@ -6,7 +6,7 @@
     "npm": "6.14.18",
     "node": "12.19.0"
   },
-  "script" : {
+  "scripts" : {
     "start" : "node server.js" 
   },
   "main": "server.js",
