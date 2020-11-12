@@ -6,6 +6,9 @@
     "npm": "6.14.18",
     "node": "12.19.0"
   },
+  "script" : {
+    "start" : "node ./bin/www" 
+  }
   "main": "server.js",
   "author": {
     "name": "songsakdi rongviriyapanish"
